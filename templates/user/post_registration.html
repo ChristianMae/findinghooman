@@ -1,0 +1,82 @@
+    {% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %}Post Registration{% endblock %}
+{% block content %}
+<div class="post-registration-container">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="post-reg-container">
+            <div class="post-reg-header">
+                <img src="{% static 'images/logo.png' %}">
+                <h3>Personal Information</h3>
+            </div>
+            <div class="input-div">
+                <label for="firstname-field">First Name: </label>
+                <input type="text" name="" id="firstname-field">
+            </div>
+            <div class="input-div">
+                <label for="lastname-field">Last Name: </label>
+                <input type="text" name="" id="lastname-field">
+            </div>
+            <div class="input-div">
+                <label for="contact-number-field">Contact Number: </label>
+                <input type="text" name="" id="contact-number-field">
+            </div>
+            <div class="input-div">
+                <label for="address-field">Address: </label>
+                <input type="text" name="" id="address-field">
+            </div>
+            <div class="input-div">
+                <label for="birthday-field">Birthday: </label>
+                <input type="text" name="" id="birthday-field">
+            </div>
+            <div class="input-div">
+                <label for="password-field">Password: </label>
+                <input type="password" name="" id="password-field">
+            </div>
+            <div class="input-div">
+                <label for="confirm-password-field">Confirm Password: </label>
+                <input type="password" name="" id="confirm-password-field">
+            </div>
+            <a href="{% url 'test' %}">
+                <button type="submit" class="btn btn-primary btn-register ">Submit</button>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="fg-block">
+            <h2>Finding Hooman</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{% static 'images/pets/gabrielle-costa-42362.jpg' %}" alt="Los Angeles" style="width:100%;margin-top:90px;">
+                        <div class="carousel-caption">
+                            <p>Gacrielle</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="{% static 'images/pets/paul-330307.jpg' %}" alt="Chicago" style="width:100%;margin-top:90px;">
+                        <div class="carousel-caption">
+                            <p>Paul</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'images/pets/ricky-kharawala-10194.jpg' %}" alt="New york" style="width:100%;margin-top:90px;">
+                        <div class="carousel-caption">
+                            <p>Ricky</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h6>Meet your Furfect Match.</h6>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

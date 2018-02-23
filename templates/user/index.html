@@ -1,0 +1,87 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %}Finding Hooman{% endblock %}
+{% block content %}
+<div class="landing">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="fh-block">
+            <img src="{% static 'images/logo.png' %}" id="logo">
+            <div class="description-container">
+                <div>
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <p>&nbsp;&nbsp;&nbsp;Find&nbsp;the&nbsp;perfect&nbsp;pet.</p>
+                </div>
+                <div>
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    <p>&nbsp;&nbsp;&nbsp;Save&nbsp;a&nbsp;Life.</p>
+                </div>
+            </div>
+            <h1>Finding Hooman</h1>
+            <h5> Pawfect Match.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Purrfect Home.</h5>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="landing-page">
+            <div class="landing-container">
+                <div class="nav-contianer">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#get-started">Get Started</a></li>
+                        <li><a data-toggle="tab" href="#contact-us">Contact Us</a></li>
+                        <li><a data-toggle="tab" href="#about-us">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div id='get-started' class="tab-pane fade in active">
+                        <div class="login-container">
+                            <div class="input-div">
+                                <label for="email-field">Email: </label>
+                                <input type="email" name="" id="email-field">
+                            </div>
+                            <div class="input-div">
+                                <label for="password-field">Password: </label>
+                                <input type="password" name="" id="password-field">
+                            </div>
+                             <a href="{% url 'home' %}">
+                                <button type="submit" class="btn btn-primary btn-register ">Login</button>
+                            </a>
+                        </div>
+                        <div class="register-container">
+                            <div class="register-header">Interested in Adopting?&nbsp;<strong>Register now.</strong></div>
+                            <label for="email">Email: </label>
+                            <input type="email" name="" id="email">
+                            <a href="{% url 'post-reg' %}">
+                                <button type="submit" class="btn btn-primary btn-register ">Register</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div id='contact-us' class="tab-pane fade">
+                        <div class="contact-container">
+                            <div class="contact-header"></div>
+                            <form method="POST" action="." autocomplete="off">
+                                <label for="fullname">Full Name: </label>
+                                <input type="text" name="" id="fullname">
+                                <label for="email">Email: </label>
+                                <input type="email" name="" id="email">
+                                <label for="contact">Contact: </label>
+                                <input type="text" name="" id="contact">
+                                <label for="subject">Subject: </label>
+                                <input type="text" name="" id="subject">
+                                <label for="message">Message: </label>
+                                <textarea row="50" col="80" id="message"></textarea> 
+                                <a href="">
+                                    <button type="submit" class="btn btn-primary btn-register ">Send</button>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                    <div id='about-us' class="tab-pane fade">
+                        <p>
+                            Finding Hooman is a pet and owner match-making application that is connected to nearby shelters to provide convinience in finding the perfect pet that fits their personality, lifestyle, household and preferences via a personality test to determine which pet is best for them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

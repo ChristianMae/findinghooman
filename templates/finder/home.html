@@ -1,0 +1,1701 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %}Finding Hooman{% endblock %}
+{% block content %}
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}">
+                <h6>Finding Hooman</h6></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'profile' %}">View Profile</a></li>
+                            <li><a href="{% url 'index' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="home-body">
+        <div class="col-md-3 col-sm-5 col-xs-12">
+            <div class="shelter-contianer">
+                <form>
+                    <input type="text" name="" placeholder="search for location">
+                    <span class="glyphicon glyphicon-search"></span>
+                </form>
+                <div class="location-container">
+                    <div class="specific-location">
+                        <div class="location">
+                            <div class="col-md-8 col-sm-8">
+                                <h5>Big Paws Dog Shelter</h5>
+                                <h6>Maa, Davao City</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a href="">
+                                    <button>View Pets</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specific-location">
+                        <div class="location">
+                            <div class="col-md-8 col-sm-8">
+                                <h5>Friendly Felines</h5>
+                                <h6>Bajada, Davao City</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a href="">
+                                    <button>View Pets</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specific-location">
+                        <div class="location">
+                            <div class="col-md-8 col-sm-8">
+                                <h5>Happy Animals</h5>
+                                <h6>Matina Crossing, Davao City</h6>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a href="">
+                                    <button>View Pets</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-7 col-xs-12">
+            <div class="pet-container">
+                <div class="pet-header">
+                    <form class="search-name">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="text" name="" placeholder="ex. bruno">
+                    </form>
+                    <h4>
+                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Pets 
+                 </h4>
+             </div>
+             <div class="pet-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Ace.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 50%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Ace</strong>
+                                </h6>
+                                <h4>Big Paws Dog Shelter, Maa, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#AceProfile">View Profile</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Agent Bunny.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 80%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Agent B</strong>
+                                </h6>
+                                <h4>Friendly Felines, Bajada, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#AgentBProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Axle.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 0%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Axle</strong>
+                                </h6>
+                                <h4>Big Paws Dog Shelter, Maa, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#AxleProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Diesel.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 70%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Diesel</strong>
+                                </h6>
+                                <h4>Friendly Felines, Bajada, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#DieselProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Jasmine.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 20%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Jasmine</strong>
+                                </h6>
+                                <h4>Friendly Felines, Bajada, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#JasmineProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Looper.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 10%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Looper</strong>
+                                </h6>
+                                <h4>Friendly Felines, Bajada, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#LooperProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Piper.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 5%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Piper</strong>
+                                </h6>
+                                <h4>Friendly Felines, Bajada, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#PiperProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Bean.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 75%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Bean</strong>
+                                </h6>
+                                <h4>Happy Animals, Matina Crossing, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#BeanProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7  col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Spoon.jpg' %}" id="poppy">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 55%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5  col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Spoon</strong>
+                                </h6>
+                                <h4>Happy Animals, Matina Crossing, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#SpoonProfile" >View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/HotSauce.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 100%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Hot Sauce</strong>
+                                </h6>
+                                <h4>Big Paws Dog Shelter, Maa, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#HotSauceProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Lily.jpg' %}">
+                                <div class="compatibilty"> 
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 30%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12 ">
+                                <h6>
+                                    <strong>Lily</strong>
+                                </h6>
+                                <h4>Big Paws Dog Shelter, Maa, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#LilyProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12 ">
+                                <img src="{% static 'images/pet_profile/Mozarella and Cheddar.jpg' %}" >
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 65%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12 ">
+                                <h6>
+                                    <strong>M and C</strong>
+                                </h6>
+                                <h4>Happy Animals, Matina Crossing, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#MozarellaandCheddarProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12 ">
+                                <img src="{% static 'images/pet_profile/Mr. Crinkles.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 92%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Mr. Crinkle</strong>
+                                </h6>
+                                <h4>Happy Animals, Matina Crossing, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#MrCrinklesProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Poppy.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 25%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Poppy</strong>
+                                </h6>
+                                <h4>Big Paws Dog Shelter, Maa, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#PoppyProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="specific-pet">
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <img src="{% static 'images/pet_profile/Steve.jpg' %}">
+                                <div class="compatibilty">
+                                    <button class="btn btn-default" disabled>
+                                        Compatibilty: 65%
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h6>
+                                    <strong>Steve</strong>
+                                </h6>
+                                <h4>Happy Animals, Matina Crossing, Davao City</h4>
+                                <h5>Status: 
+                                    <strong>Adoptable</strong>
+                                </h5>
+                                <button data-toggle="modal" data-target="#SteveProfile">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modals -->
+<!-- AceProfile -->
+<div id="AceProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Ace.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Ace</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Dumped outside the shelter</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Big Paws Dog Shelter, Maa, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">January 4, 2010</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hello, friend! My name is Ace. I love taking long walks, playing catch, and 
+                        swimming. I like the great indoors, but I love being in the greater outdoors. 
+                        I'm very friendly, and would be happy to have a friend like you for life.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I love all hoomans, but the best hooman for me is someone who:</strong>
+                        </h5>
+                        <h6>-Is active, friendly, loving, adventurous and caring;</h6>
+                        <h6>-Is an outdoor kind of person;</h6>
+                        <h6>-Loves walks and swimming as much as I do;</h6>
+                        <h6>-Has a good arm for catch;</h6>
+                        <h6>-Gives me hugs and kisses and treats everyday!;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 50%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Ace.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- AggentBProfile -->
+<div id="AgentBProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Agent Bunny.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Agent B</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Female</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Friendly Felines, Bajada, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 24, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Oh! Hi there, I'm Agent Bunny-- Friendly Felines' most famous detective.
+                        In my eye, everything MUST be investigated. Curiosity is the key to figuring out
+                        impossible mysteries. Since my admission here in Friendly Felines, I have
+                        proudly uncovered over a hundered enigmas, including the mystery of the Illusive
+                        Red Dot (apparently, the humans control it via a small black thing they call a
+                        lazer pointer to torment us out of their own sick amusement) and why there are
+                        no dogs in the shelter (because it's Friendly FELINES, silly!). I have come to 
+                        find the way of humans very intruiging and thus, would love to solve more of 
+                        their mysteries. If you want, you can be my partner in solving their secrets.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>Humans are very interesting subjects, but MY HOOMAN must:</strong>
+                        </h5>
+                        <h6>-Be affectionate;</h6>
+                        <h6>-Be patient;</h6>
+                        <h6>-Help me out of weird situations that I tend to get into;</h6>
+                        <h6>-Give me space to roam and mysteries to solve within the house;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 80%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Agent B.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- AxleProfile -->
+<div id="AxleProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Axle.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Axle</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Big Paws Dog Shelter, Maa, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 24, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Yo, waddup! I'm Axle. I love talking and walking and running and playing and 
+                        stuff. Whatever you're into, I'm most likely in it too. I basically just love 
+                        hanging out. I'm more of, like, a chill doge, but boy do I come alive at the 
+                        beach, man. It's like the most RAD place in this planet, right here. 
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>Humans are cool and all, but I'm looking for a Hooman that:</strong>
+                        </h5>
+
+                        <h6>-Loves to just chill out;</h6>
+                        <h6>-Lives near the beach (or goes to the beach often)(or loves the beach as much 
+                        as I do);</h6>
+                        <h6>-Pets me often and treats me like a bro;</h6>
+                        <h6>-Is a awesome bro;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 0%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Axle.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- DieselProfile -->
+<div id="DieselProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Diesel.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Diesel</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Friendly Felines, Bajada, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 27, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hi, I'm Diesel. I'm the fastest kitty in all Friendly Felines'. I love looking
+                        for a little bit of action here and there. If you're looking for the perfect 
+                        playmate, count me in!  
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>The perfect Hooman for me is someone who:</strong>
+                        </h5>
+
+                        <h6>-Is patient, loving and kind;</h6>
+                        <h6>-Has toys or anything to distract me from the curtains;</h6>
+                        <h6>-Loves to play with me;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 70%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Diesel.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JasmineProfile -->
+<div id="JasmineProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Jasmine.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Jasmine</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Female</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Dumped outside the shelter</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Friendly Felines, Bajada, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 14, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Oh, hi! I'm Jasmine. If you need me, you can find me chilling on any soft and 
+                        comfy surfaces available. I dunno about the other cats, but if you ask me, 
+                        indoors is all the world I need. I just love chilling out and cuddling and 
+                        hugging. Most of all, I ADORE sleeping. I know I'm not much of an active kitty,
+                        but I'm still a great friend. Again, I'll be here if you need me. 
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>Any Hooman is fine for me, but I'd appreciate it if they could:</strong>
+                        </h5>
+
+                        <h6>-Just chill with me;</h6>
+                        <h6>-Be nice and calm and cuddly;</h6>
+                        <h6>-Keep me in a comfortable, quiet and peaceful environment;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 20%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Jasmin.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LooperProfile -->
+<div id="LooperProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Looper.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Looper</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Friendly Felines, Bajada, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">March 8, 2015</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Oh, hello there, friend. The name's Looper. As you can see, I'm evidently blind.
+                        But don't let my lack of sight fool you. I don't need my eyes to give you all my
+                        love and affection. I can be the calmest, sweetest, cuddliest friend you could 
+                        ever ask for. Infact, I'm registered as a therapy cat for Animal Assisted 
+                        Therapy here in Davao. You can tell me all your woes and troubles, pal. I'll be 
+                        here.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>My preferred Hooman is someone who:</strong>
+                        </h5>
+
+                        <h6>-Is extra gentle, cuddly, loving and patient;</h6>
+                        <h6>-Needs me as much as I need him/her;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 10%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Looper.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PiperProfile -->
+<div id="PiperProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Piper.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Piper</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Dumped outside the shelter</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Friendly Felines, Bajada, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">October 10, 2010</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Ooh... that's a nifty camera you got there, friend. The name's Piper. Nice 
+                        haircut. Where'd you get it? Yeah, I grow mine naturally. 
+                        What's that thing dangling on your backpack there? Ooh... wow. How 
+                        much is that? You know, the folks here say that I'm talkative and whatnot. 
+                        Can you believe it? Me? Talkative? That's just absurd. I just love having these 
+                        conversations though. There's a LOT to be learned in exchanging information.
+                        Like this one time, I heard from the other cats that the gardener can sing and I 
+                        never thought he could! Ofcourse, I tried telling the other human folks of my
+                        discovery, but no one seemed to be interested. Wow, you're a great guy. We 
+                        should talk again sometime, yeah?
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>All humans are great, but I'd like it more if they:</strong>
+                        </h5>
+
+                        <h6>-Could exchange stories with me;</h6>
+                        <h6>-Would listen to the things that I have to say;</h6>
+                        <h6>-Could sneak in fish once in a while;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 5%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Piper.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BeanProfile -->
+<div id="BeanProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Bean.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Bean</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Bird</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Rescued from circus</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Happy Animals, Matina Crossing, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 27, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        If you're looking for Davao's next BIG talent, you're staring at him. Yes, my
+                        dear, I am the Awesome... the Magnificent...the MOST STUNNING...BEAN! I can 
+                        sing. I can dance. I can play basketball. I can even tell you a good joke!
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>The perfect Hooman for me is the one who:</strong>
+                        </h5>
+
+                        <h6>-Gives me my own space to perform on;</h6>
+                        <h6>-LOVES my show;</h6>
+                        <h6>-Teach me new acts to keep me busy and active;</h6>
+                        <h6>-Gives me treats;</h6>
+                        <h6>-Has sufficient knowledge on how to raise me.</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 75%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Bean.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SpoonProfile -->
+<div id="SpoonProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Spoon.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Spoon</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Rescued. Found choking on a plastic spoon</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Happy Animals, Matina Crossing, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">October 10, 2010</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Umm... Can I help you? Oh, the name's Spoon. Yeah, I got that name cause they 
+                        found me with a spoon lodged deep in my throat. I know. It's humiliating. Don't 
+                        even ask why it got there in the first place, please. I'd rather not say. It's 
+                        too embarassing... but I'll give you a hint. I LOVE collecting things. Put them 
+                        into my Stash of Stuff. So I'll just let you fill in on the details. Really 
+                        though, if you lost something like a button or an earing, it's most likely to 
+                        end up in my stash. I'm good at finding those kind of things.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I am into Hoomans who:</strong>
+                        </h5>
+
+                        <h6>-Is extra patient and can cope with my hoarding and kleptomanic tendencies;</h6>
+                        <h6>-Has a vet in emergency dial in case I swallow something important (which is,
+                        assure you, very VERY rare);</h6>
+                        <h6>-Can cuddle and chill with me;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 55%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Spoon.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HotSauceProfile -->
+<div id="HotSauceProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/HotSauce.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Hot Sauce</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Female</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Big Paws Dog Shelter, Maa, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">May 25, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hello! My name is Hotsauce. Not that I'm bragging or anything, but my pals 
+                        here in Big Paws have always said that I'm the most clever of the lot. I just 
+                        love learning new stuff. Not only that, but I also have a passion for action and
+                        adventure. I currently volunteer as a canine companion in Red Cross' emergency 
+                        unit during weekends and I LOVE it. Helping others in need is sort of a HUGE 
+                        deal for me. Who knows, maybe you and I can have TONS of adventures together.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I'd appreciate a Hooman who:</strong>
+                        </h5>
+
+                        <h6>-Is active, adventurous, kind and helpful;</h6>
+                        <h6>-Would give me a chance to still volunteer at Red Cross;</h6>
+                        <h6>-Teach me new tricks and keep me busy and active;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 100%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Hot Sauce.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LilyProfile -->
+<div id="LilyProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Lily.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Lily</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Female</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Rescued from an abusive owner who tried to burn her alive using 
+                        kerosene</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Big Paws Dog Shelter, Maa, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 24, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hello, my name is Lily.  I'm often described as the little angel of 
+                        Big Paws. I love being with people. Infact, I am an active volunteer at Therapy 
+                        Dogs Philippines, where I go providing love and comfort to humans in need. I've 
+                        been through tough times as well, and so I know that giving out love can heal 
+                        broken hearts. It's a good thing that I'll never run out of love. Cause you see,
+                        even though I have the tiniest paw in Big Paws, I have a GIGANTIC heart.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I love all hoomans, but the best hooman for me is someone who:</strong>
+                        </h5>
+
+                        <h6>-Is loving and sweet and calming;</h6>
+                        <h6>-Needs me and my GIGANTIC heart;</h6>
+                        <h6>-Still allows me to help people in need of Therapy Dogs Philippines;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 30%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Lily.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MozarellaandCheddarProfile -->
+<div id="MozarellaandCheddarProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Mozarella and Cheddar.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Mozarella and Cheddar</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Males</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Rescued from circus</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Happy Animals, Matina Crossing, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">December 12, 2013</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Bonjour! We are the cheezy brothers of Happy Animals.Yes, we may be small. Tiny,
+                        even! But we are far braver than you think! We have made a lot of adventures 
+                        together. We have travelled together. Performed together. Slept together. Ate 
+                        together. Braved the tides together. We are brothers. We are family... and we 
+                        hope to be a part of yours.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>We are currently looking for a Hooman who:</strong>
+                        </h5>
+
+                        <h6>-Is active, friendly, loving, adventurous and caring;</h6>
+                        <h6>-Loves the outdoors;</h6>
+                        <h6>-Keeps us together, and therefore, adopts BOTH of us;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 65%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Mozarella and Cheddar.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MrCrinklesProfileProfile -->
+<div id="MrCrinklesProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Mr. Crinkles.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Mr. Crinkle</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Feline</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Dumped outside the shelter</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Happy Animals, Matina Crossing, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">February 27, 2017</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Yo. They call me Crinkles. Mr. Crinkles. I like this lamp. Because it's so, so 
+                        warm. It glows too. That's always a bonus. They tell me I'm a funny guy. I 
+                        actually don't get why though. All I ever do is to do what I want whenever I 
+                        want. That's how I got so fat. Since all I want to do is to put food in my 
+                        mouth.
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>Any Hooman is right for me, but I would appreciate it if he/she/they:</strong>
+                        </h5>
+
+                        <h6>-Could shower me with love and affection (and lots of food);</h6>
+                        <h6>-Could schedule exercise for me because I'm told by the folks here that I'm 
+                        nearing obesity;</h6>
+                        <h6>-Could bring my favorite lamp home with me.</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 92%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Mr. Crinkle.</button>
+            </div>
+        </div>
+    </div>
+</div>   
+<!-- PoppyProfile -->
+<div id="PoppyProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Poppy.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Poppy</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Female</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Canine</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Found as a stray</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Big Paws Dog Shelter, Maa, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">January 29, 2010</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">Yes</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hi! Hey! Welcome to Big Paws. I'm Poppy! I'm super friendly. I love going on
+                        walks and runs and playing catch. What's your name? Nice to meet you too!
+                        Wow, you must be really tired, you've come a long way. Here, let me give you big
+                        hug! You're SO sweet! I just know we're gonna be best friends!
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I love all hoomans, but the best hooman for me is someone who:</strong>
+                        </h5>
+
+                        <h6>-Is active, loving, adventurous and caring;</h6>
+                        <h6>-Let's me hug and kiss and cuddle them everyday!;</h6>
+                        <h6>-Gives me hugs and kisses and treats everyday!;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 25%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt">I am interested to adopt, Poppy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SteveProfile -->
+<div id="SteveProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img src="{% static 'images/logo.png' %}">
+                <h4 class="modal-title">Finding Hooman</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <img src="{% static 'images/pet_profile/Steve.jpg' %}">
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <label for="#name">Name:</label>
+                        <h4 id="name"><strong>Steve</strong></h4>
+                    </div>
+                    <div class="row">
+                        <label for="#gender">Gender: </label>
+                        <h5 id="gender">Male</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#species">Species: </label>
+                        <h5 id="species">Snake</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#origin">Origin: </label>
+                        <h5 id="origin">Rescued from snake-eating restaurant</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#shelter">Shelter: </label>
+                        <h5 id="shelter">Happy Animals, Matina Crossing, Davao City</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#rdate">Rescue Date: </label>
+                        <h5 id="rdate">October 10, 2010</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#nuetered">Neutered: </label>
+                        <h5 id="nuetered">No</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#status">Status: </label>
+                        <h5 id="status">Adoptable</h5>
+                    </div>
+                    <div class="row">
+                        <label for="#sr">Special Requirements: </label>
+                        <h5 id="sr"> A large, secure environment with plants to climb on. </h5>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <label for="#content">Message:</label>
+                    <div class="content" id="content">
+                        Hello. I'm Steve. Don't be fooled by my scary complexion. I am actually pretty 
+                        cool. Infact, the folks here call me  Cool Stevie. I don't know if they
+                        meant that in a literal sense though, since I am a cold-blooded reptile. 
+                    </div>
+                </div>
+                <div class="hooma-desc">
+                    <label>Looking for My Hooman:</label>
+                    <div>
+                        <h5>
+                            <strong>I like hoomans who:</strong>
+                        </h5>
+
+                        <h6>-Have a nice spacious cage/tank with awesome hiding places and climbing spots;</h6>
+                        <h6>-Knows how to handle and care for me;</h6>
+                    </div>
+                </div>
+                <div class="compatibilty">
+                    <button class="btn btn-default" disabled>
+                        Compatibilty: 65%
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-default" id="adopt" disabled>I am interested to adopt, Steve</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

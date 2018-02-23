@@ -1,0 +1,57 @@
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+$desktop-md-width: 1300px;
+$desktop-lg-width:1600px;
+@mixin mobile {
+    @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop-md {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-md-width - 1px}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-lg-width - 1px}){
+        @content;
+    }
+}
+@mixin desktop-lg {
+    @media (min-width: #{$desktop-lg-width}) {
+        @content;
+    }
+}
+
+$white: #FFF;
+$pale-grey-six: #E4E4EB;
+$dim-gray: #676767;
+$chardonnay: #F9B331;
+$strong-tangelo: #C67236;
+$orange: #EE4d00;
+$cloudy: #ADACAB;
+$dirty-white: #F7F3F3;
+//chardonnay shades
+$c-dark-20: darken($chardonnay, 20%);
+$c-dark-30: darken($chardonnay, 30%);
+//strong tangelo
+$st-dark-10: darken($strong-tangelo,10%);
+
+//Montserrat
+$Montserrat-Bold: 'Montserrat-Bold';
+$Montserrat-Light: 'Montserrat-Light';
+$Montserrat-LightItalic: 'Montserrat-LightItalic';
+$Montserrat-Medium: 'Montserrat-Medium';
+$Montserrat-Regular: 'Montserrat-Regular';
+$Montserrat-SemiBold: 'Montserrat-SemiBold';
+$Nikotinus: 'Nikotinus';

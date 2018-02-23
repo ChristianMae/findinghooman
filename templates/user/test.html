@@ -1,0 +1,101 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %}Post Registration{% endblock %}
+{% block content %}
+<div class="test-container">
+    <div class="col-md-6 col-sm-12 col-xs-12" id="part1">
+        <div class="question-header-container">
+            <img src="{% static 'images/logo.png' %}">
+            <h3>Personality Test</h3>
+        </div>
+        <div class="question-container">
+            <label id="question"> Do you enjoy spending time outdoors?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;Yes, I love the outside world!
+            <br>
+            <input type="radio" name="optradio">&nbsp;Sure, sometimes
+            <br>
+            <input type="radio" name="optradio">&nbsp;Not really. I'm a potato
+            <br>
+            
+            <label id="question">How may people do you live with?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;I'm alone.
+            <br>
+            <input type="radio" name="optradio">&nbsp;Just one. I have a spouse/ roommate
+            <br>
+            <input type="radio" name="optradio">&nbsp;Two or more.<br>
+
+            <label id="question">What's your attentions span like?</label><br>
+            <input type="radio" name="optradio">&nbsp;I'm great at multi-tasking<br>
+            <input type="radio" name="optradio">&nbsp;I get distracted. A lot.<br>
+            <input type="radio" name="optradio">&nbsp;I can focus on thing for a period of time, but I am not great at multitasking<br>
+
+            <label id="question">How many hours a week do you work?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;I'm retired/unemployed
+            <br>
+            <input type="radio" name="optradio">&nbsp;20-30
+            <br>
+            <input type="radio" name="optradio">&nbsp;40+
+            <br>
+
+            <label id="question">You meet your friends with:</label><br>
+            <input type="radio" name="optradio">&nbsp;A hug and a handshake.<br>
+            <input type="radio" name="optradio">&nbsp;A "hey" or "hello".<br>
+            <input type="radio" name="optradio">&nbsp;What friends?<br>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12" id="part2">
+        <div class="question-header-container">
+            <h4>Personality Test</h4>
+        </div>
+        <div class="question-container">
+            <label id="question">Where do you live?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;Near the beach
+            <br>
+            <input type="radio" name="optradio">&nbsp;Subdivision
+            <br>
+            <input type="radio" name="optradio">&nbsp;Small town
+            <br>
+            <input type="radio" name="optradio">&nbsp;City 
+            <br>
+            <input type="radio" name="optradio">&nbsp;Countryside 
+            <br>
+
+
+            <label id="question">What grosses you out the most?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;Cleaning up puke.<br>
+            <input type="radio" name="optradio">&nbsp;Cleaning up poop.<br>
+            <input type="radio" name="optradio">&nbsp;Cleaning up pee.<br>
+            <input type="radio" name="optradio">&nbsp;None of that bothers me... oh the things you do for love!<br>
+
+            
+
+            <label id="question">What environment do you host?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;Colorful, cheerful, sunny and noisy.
+            <br>
+            <input type="radio" name="optradio">&nbsp;Bright, neat, and crisp.
+            <br>
+            <input type="radio" name="optradio">&nbsp;Gray, peaceful and soothing.
+            <br>
+
+            <label id="question">Which would you rather do?</label>
+            <br>
+            <input type="radio" name="optradio">&nbsp;Lay in bed.
+            <br>
+            <input type="radio" name="optradio">&nbsp;Go out on a walk.
+            <br>
+            <input type="radio" name="optradio">&nbsp;Go for a swim.
+            <br>
+            <a href="{% url 'home' %}">
+                <button type="submit" class="btn btn-primary btn-register ">Submit</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
